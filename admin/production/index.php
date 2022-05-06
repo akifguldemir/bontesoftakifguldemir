@@ -12,6 +12,8 @@
 
               <?php 
 
+              if(isset($_GET['durum'])){
+
                 if ($_GET['durum']=="ok") {?>
 
                 <b style="color:green;">İşlem Başarılı...</b>
@@ -20,7 +22,7 @@
 
                 <b style="color:red;">İşlem Başarısız...</b>
 
-                <?php }
+                <?php }}
 
                 ?>
 
@@ -57,8 +59,6 @@
                           <th>Banner Eklenme Zamanı</th>
                           <th>Banner Düzenle</th>
                           <th>Banner Sil</th>
-
-
                          
                         </tr>
                       </thead>
@@ -71,11 +71,11 @@
                     
                         <tr>
                           <td><?php echo $bannercek['banner_id'] ?></td>
-                          <td><?php echo $bannercek['banner_yol'] ?></td>
+                          <td><img width="150px" src="../../<?php echo $bannercek['banner_yol'] ?>"></td>
                           <td><?php echo $bannercek['banner_baslik'] ?></td>
                           <td><?php echo $bannercek['banner_icerik'] ?></td>
                           <td><?php echo $bannercek['banner_zaman'] ?></td>
-                          <td><button type="button" class="btn btn-primary btn-xs">Düzenle</button></td>
+                          <td><a href="banner-duzenle.php?banner_id=<?php echo $bannercek['banner_id']; ?>"><button type="button" class="btn btn-primary btn-xs">Düzenle</button></a></td>
                           <td><a href="../netting/islem.php?banner_id=<?php echo $bannercek['banner_id']; ?>&bannersil=ok&banner_yol=<?php echo $bannercek['banner_yol'] ?>"><button type="button" class="btn btn-danger btn-xs">Sil</button></a></td>
                         </tr>
 

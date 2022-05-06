@@ -1,4 +1,7 @@
-<?php include 'header.php' ?>
+<?php include 'header.php';
+
+
+?>
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -46,16 +49,23 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php   
+                              $bannersor=$db->prepare("select * from banner");
+                              $bannersor->execute();
+                              while($bannercek=$bannersor->fetch(PDO::FETCH_ASSOC)) { ?>
+                    
+                    
                         <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td><?php echo $bannercek['banner_id'] ?></td>
+                          <td><?php echo $bannercek['banner_yol'] ?></td>
+                          <td><?php echo $bannercek['banner_baslik'] ?></td>
+                          <td><?php echo $bannercek['banner_icerik'] ?></td>
+                          <td><?php echo $bannercek['banner_zaman'] ?></td>
                           <td><button type="button" class="btn btn-primary btn-xs">Düzenle</button></td>
                           <td><button type="button" class="btn btn-danger btn-xs">Sil</button></td>
-
                         </tr>
+
+                        <?php } ?>
 
                       </tbody>
                     </table>

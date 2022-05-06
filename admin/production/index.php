@@ -76,7 +76,7 @@
                           <td><?php echo $bannercek['banner_icerik'] ?></td>
                           <td><?php echo $bannercek['banner_zaman'] ?></td>
                           <td><button type="button" class="btn btn-primary btn-xs">Düzenle</button></td>
-                          <td><button type="button" class="btn btn-danger btn-xs">Sil</button></td>
+                          <td><a href="../netting/islem.php?banner_id=<?php echo $bannercek['banner_id']; ?>&bannersil=ok&banner_yol=<?php echo $bannercek['banner_yol'] ?>"><button type="button" class="btn btn-danger btn-xs">Sil</button></a></td>
                         </tr>
 
                         <?php } ?>

@@ -43,5 +43,26 @@ if (isset($_POST['bannerkaydet'])) {
 
 
 }
+if ($_GET['bannersil']=="ok") {
 
+
+	
+	$sil=$db->prepare("DELETE from banner where banner_id=:banner_id");
+	$kontrol=$sil->execute(array(
+		'banner_id' => $_GET['banner_id']
+	));
+
+	if ($kontrol) {
+
+		$resimsilunlink=$_GET['banner_yol'];
+		unlink("../../$resimsilunlink");
+
+		Header("Location:../production/index.php?durum=ok");
+
+	} else {
+
+		Header("Location:../production/index.php?durum=no");
+	}
+
+}
 ?>

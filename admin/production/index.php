@@ -10,6 +10,20 @@
                 <h3>Banner Sayfası</h3><a href="banner-ekle.php"><button type="button" class="btn btn-success">Banner Ekle</button><a>
               </div>
 
+              <?php 
+
+                if ($_GET['durum']=="ok") {?>
+
+                <b style="color:green;">İşlem Başarılı...</b>
+
+                <?php } elseif ($_GET['durum']=="no") {?>
+
+                <b style="color:red;">İşlem Başarısız...</b>
+
+                <?php }
+
+                ?>
+
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
